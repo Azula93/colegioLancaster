@@ -1,0 +1,19 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&family=Quicksand:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kablammo', cursive;
+    background: #1e1e1b;
+}
+
+main{
+    max-width: 1000px;
+    margin: 50px auto;
+    overflow: hidden;
+}
