@@ -17,7 +17,7 @@ export default function NavBar ({navArrayLinks}){
     return (
         <>
 
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     <IconButton
                     color="inherit"
@@ -46,7 +46,7 @@ export default function NavBar ({navArrayLinks}){
             </AppBar>
 
            
-
+            {/*  Drawer es es menu lateral que aparece en dispositivos moviles*/}
             <Drawer open={open}
             anchor="left"
             // anchor indica hacia donde se abre el menu

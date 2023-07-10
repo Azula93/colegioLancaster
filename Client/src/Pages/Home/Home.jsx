@@ -10,6 +10,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import {Tarjeta,CardActionArea,CardMedia, CardActions} from "../../Components/Cards/Card";
 import "../../index.css";
 
+
 const HomePage =() =>{
 
 
@@ -47,9 +48,13 @@ const HomePage =() =>{
                 </Slide>
   
             </SlideShow>
+            
              {/* SLIDER FIN */}
 
          {/* TARJETAS PRINCIPALES INICIO */}
+         {/* RESEÑA HISTORICA */}
+         <Grid container spacing={2}>
+         <Grid item>
             <Tarjeta>
                 <CardActionArea>
                 
@@ -74,6 +79,39 @@ const HomePage =() =>{
                
         </CardActions>
         </Tarjeta>
+        </Grid>
+
+        <Grid item>
+        {/* Quienes somos */}
+        <Tarjeta>
+                <CardActionArea>
+                
+                <CardMedia 
+                component="img"
+                image="/src/assets/img/lapiz.jpg" alt= "lapiz" />
+
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                    Quienes somos
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </Typography>
+                </CardContent> 
+            </CardActionArea>
+    
+            <CardActions>
+                
+                    <Button href="#" size="small" startIcon={<ShareIcon/>}>Compartir</Button>
+                    <Button href="#" size="small" startIcon={<VisibilityIcon/>}>Ver Más</Button>
+               
+        </CardActions>
+        </Tarjeta>
+        </Grid>
+        </Grid>
         {/* TARJETAS PRINCIPALES FIN */}
 
         {/* NUESTRO PROGRAMA INICIO */}
@@ -86,13 +124,10 @@ const HomePage =() =>{
             </Typography>
 
 
-        <Grid 
-            container
+        <Grid container spacing={2}
             direction="row"
             justifyContent="space-evenly"
-            alignItems="center"
-            
-            >
+            alignItems="center" >
                 {/* TARJETA 1 INICIO */}
                 <Grid item>
                 <Tarjeta>
@@ -128,7 +163,7 @@ const HomePage =() =>{
                     
                     <CardMedia 
                     component="img"
-                    image="/src/assets/img/deportes.png" alt= "image" />
+                    image="/src/assets/img/sport.jpg" alt= "sport" />
 
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">

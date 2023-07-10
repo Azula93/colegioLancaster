@@ -1,15 +1,20 @@
 import { Grid, TextField, Typography, Button, Box } from "@mui/material";
-import "./register.css"
+import "./register.css";
 import SendIcon from '@mui/icons-material/Send';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
+import { registerRequest } from "../../api/auth";
+import {useForm} from "react-hook-form"
 
 
 const RegisterForm = () => {
 
-
-
+  const {handleSubmit} = useForm();
+  
+  const onSubmit = handleSubmit(async(values) =>{
+    const res = await registerRequest(values)
+    console.log(res)
+  })
 
   let valoresIniciales={
       nombre:"",
@@ -21,30 +26,28 @@ const RegisterForm = () => {
   const enviarFormulario = (data) =>{
     console.log(data)
   }
+      
+  const {handleChange,values, errors} = useFormik({
 
-        
-  const {handleSubmit,handleChange,values, errors} = useFormik({
     initialValues: valoresIniciales,
 
      onSubmit: enviarFormulario,
-     
+
     //  (data)=>{
     //   console.log(data)
     //  }, 
 
       validationSchema: Yup.object({
-        nombre:Yup.string().required("Debes ingresar tu Nombre"),
+        nombre:Yup.string().required("Debes ingresar tu Nombre").min(4, "La contraseña debe tener al menos 4 caracteres"),
 
-        apellido:Yup.string().required("Debes ingresar tu Apellido"),
+        apellido:Yup.string().required("Debes ingresar tu Apellido").min(4, "La contraseña debe tener al menos 4 caracteres"),
 
-        email:Yup.string().required("Debes ingresar un Email Valido"),
+        email:Yup.string().required("Debes ingresar un Email Valido").email("El email no es valido"),
 
-        password:Yup.string().required("Debes ingresar una contraseña valida"),
+        password:Yup.string().required("Debes ingresar una contraseña").min(6, "La contraseña debe tener al menos 6 caracteres"),
+
     })
-
   })
-
-
 
   return(
   <Box x={{
@@ -59,11 +62,13 @@ const RegisterForm = () => {
     <Typography color="primary" 
     variant="h2" 
     align="center" 
-    margin={4} 
+    margin={10} 
     className="title" 
     spacing={2}>Formulario de Registro</Typography>
 
-    <form  className="formContainer" onSubmit={handleSubmit}>
+    <form  className="formContainer" 
+    onSubmit={onSubmit}
+    >
 
   
       <Grid container 

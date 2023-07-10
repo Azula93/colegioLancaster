@@ -19,14 +19,15 @@ const LoginForm = () =>{
 
 
   const {handleSubmit,handleChange,values, errors} = useFormik({
-    initialValues,
-     onSubmit:enviarFormulario, 
 
-    validationSchema: Yup.object({
+      initialValues,
+      onSubmit:enviarFormulario, 
+
+      validationSchema: Yup.object({
       
-      email:Yup.string().required("Debes ingresar un Email Valido"),
+      email:Yup.string().required("Debes ingresar un Email Valido").email("El email no es valido"),
 
-      password:Yup.string().required("Debes ingresar una contraseña valida"),
+      password:Yup.string().required("Debes ingresar una contraseña").min(6, "La contraseña debe tener al menos 6 caracteres"),
     })
 
   })

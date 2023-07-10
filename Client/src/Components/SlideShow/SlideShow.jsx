@@ -105,6 +105,7 @@ const SlideShow = ({
 
 const ContenedorPrincipal = styled.div`
 	position: relative;
+	margin-top: 25px;
 `;
 
 const ContenedorSlideshow = styled.div`
@@ -117,6 +118,7 @@ const Slide = styled.div`
 	overflow: hidden;
 	transition: .3s ease all;
 	z-index: 10;
+	border-radius: 15px;
 	/* max-height: 500px; */
 	position: relative;
 	img {
