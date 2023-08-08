@@ -9,12 +9,13 @@ import cors from "cors";
 
 const app = express();
 
+
 // cors permite que todos los dominios se puedan comunicar en este sevridor, si no se susa cors los datos no se envian porque el front esta en un puerto y el back en otro
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:5173',
 }));
 
-app.use(morgan('dev'));
+app.use(morgan('server'));
 
 // 👇 app.use(express.json()); hace que la request se cambie a formato json y pueda ser leido
 app.use(express.json());

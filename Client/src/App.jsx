@@ -8,11 +8,12 @@ import Register from "./Pages/Register/Register";
 import LoginIcon from '@mui/icons-material/Login';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import HomeIcon from '@mui/icons-material/Home';
-import "./index.css"
-
+import "./index.css";
+import RegisterPage from "./Pages/registerPage";
 
 // este array hace que los botones home, register, login sean dinamicos, es decir van a la ubicacion cambian de nombre y tiene icono segun sea el caso
 const navArrayLinks =[
+ 
   { title:"Inicio",
    path: "/home",
    icon: <HomeIcon/>},
@@ -37,15 +38,18 @@ export default function App () {
         
          <Container maxWidth="md">
 
+         
+          
           <Routes>
 
-              <Route path="/" element={<Login/>} />
-              <Route path="/home" element={<HomePage/>} />
+              <Route path="/" element={<HomePage/>} />
               <Route path="/login" element={<Login/>} />
-              <Route path="/register" element={<Register/>} />
-              {/* <Route path="/profile" element={<Profile/>} /> */}
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/registerpage" element={<RegisterPage/>}/>
+              
 
             </Routes>
+            
 
           </Container>
     </>

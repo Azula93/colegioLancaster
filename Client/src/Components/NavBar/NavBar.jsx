@@ -29,7 +29,7 @@ export default function NavBar ({navArrayLinks}){
                     <MenuIcon/>
 
                     </IconButton>
-                    <Typography variant="h6" sx={{flexGrow:1}}>Colegio Lancaster</Typography>
+                    <Typography variant="h6" sx={{flexGrow:1}}>CodeLogy</Typography>
 
                     <Box sx={{ display:{xs: "none", sm:"block"}}}>
                         {/* // este display lo que hace es que en pantallas pequeñas NO se vean los botones del navbar y en pantallas mas grandes aparezca */}
